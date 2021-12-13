@@ -1,0 +1,19 @@
+.positionInfo {
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  color: white;
+  margin-top: 52px;
+  font-size: 1.5em;
+  padding: 3rem 3rem;
+  & a {
+    color: white;
+    text-align: center;
+    
+  }
+  & a:hover {
+    color: #1a9079;
+  }
+}
