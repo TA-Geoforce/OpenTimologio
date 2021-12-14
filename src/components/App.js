@@ -1,8 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps*/
 import React from "react"
 import { useState, useEffect } from 'react';
-import './App.scss';
-import 'bulma/bulma.sass';
 import Home from "./Home.js"
 import Info from "./Info.js"
 import Version from "./Version.js"

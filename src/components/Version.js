@@ -1,6 +1,5 @@
 import React from "react"
-import "./Version.scss"
-var pjson = require('../package.json');
+var pjson = require('../../package.json');
 
 function Version() {
 

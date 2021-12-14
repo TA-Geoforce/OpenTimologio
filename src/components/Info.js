@@ -1,5 +1,4 @@
 import React from "react"
-import "./Info.scss"
 
 function Info() {
 
