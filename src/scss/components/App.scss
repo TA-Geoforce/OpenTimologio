@@ -78,7 +78,7 @@ font-weight: normal;
   }
 }
 
-button {
+h4 > button {
   background:none;
   border:none;
   margin:0;
@@ -90,4 +90,26 @@ button {
 
 button:hover {
   color: rgb(161, 158, 158);
+}
+
+.languageButtons {
+  width: 30px;
+  height: 30px;
+  margin-top: 62px;
+  position: relative;
+  z-index: 1000;
+  color: white;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.languageButtonsPhone {
+  width: 30px;
+  height: 30px;
+  margin-top: 172px;
+  position: relative;
+  z-index: 1000;
+  color: white;
+  margin-right: 10px;
+  margin-left: 5px;
 }

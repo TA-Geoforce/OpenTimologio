@@ -4,9 +4,16 @@ import { useState, useEffect } from 'react';
 import Home from "./Home.js"
 import Info from "./Info.js"
 import Version from "./Version.js"
+import { useTranslation, Trans } from 'react-i18next';
+
+const lngs = {
+  en: { nativeName: 'English' },
+  de: { nativeName: 'Deutsch' }
+};
 
 function App() {
 
+  const { i18n } = useTranslation();
   const [openMenu, setOpenMenu] = useState("");
   const [openContent, setOpenContent] = useState("");
   const [windowSize, setWindowSize] = useState(900);
@@ -14,6 +21,7 @@ function App() {
   const [version, setVersion] = useState(false);
   const [info, setInfo] = useState(false);
   const [phoneMode, setPhoneMode] = useState(false);
+  const [positionButtons, setPositionButtons] = useState("languageButtons")
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,6 +31,7 @@ function App() {
       }
       else
       {
+        setPositionButtons("languageButtons");
         setOpenMenu("");
         setOpenContent("");
         setPhoneMode(false);
@@ -43,12 +52,13 @@ function App() {
     {
       setOpenContent("is-active");
       setOpenMenu("is-active");
+      setPositionButtons("languageButtonsPhone");
     }
     else
     {
       setOpenContent("");
       setOpenMenu("");
-
+      setPositionButtons("languageButtons");
     }
   }
 
@@ -103,22 +113,39 @@ function App() {
                   ? <div className="navbar-end">
                       <div className="position-text">
                       <h4>
-                      <button className="positionHomeButton" onClick={changeToHome}>Home</button>
+                      <button className="positionHomeButton" onClick={changeToHome}> 
+                        <Trans i18nKey="description.part1">
+                          Home
+                        </Trans>
+                      </button>
                       <button onClick={changeToVersion}>
-                      Version
+                        <Trans i18nKey="description.part2">
+                          Version
+                        </Trans>
                       </button>
                       {" "}|{" "}
                       <button onClick={changeToInfo}>
-                      Info
+                        <Trans i18nKey="description.part3">
+                          Info
+                        </Trans>
                       </button>
                       </h4>
                       </div>
                     </div>
                   :
                   <div className="color has-text-centered">
-                    <h4 className="positionHomeButton"><button onClick={changeToHome}>Home</button></h4>
-                    <h4 className="navbar-item"><button onClick={changeToVersion}>Version</button></h4>
-                    <h4 className="navbar-item"><button onClick={changeToInfo}>Info</button></h4>
+                    <h4 className="positionHomeButton"><button onClick={changeToHome}>
+                      <Trans i18nKey="description.part1">
+                        Home
+                      </Trans></button></h4>
+                    <h4 className="navbar-item"><button onClick={changeToVersion}>
+                      <Trans i18nKey="description.part2">
+                        Version
+                      </Trans></button></h4>
+                    <h4 className="navbar-item"><button onClick={changeToInfo}>
+                      <Trans i18nKey="description.part3">
+                        Info
+                      </Trans></button></h4>
                   </div>
                     }
                 </div>
@@ -127,6 +154,8 @@ function App() {
       {home === true && <Home/>}
       {version === true && <Version/>}
       {info === true && <Info/>}
+      <img className={positionButtons} alt="English" src={"https://unpkg.com/language-icons/icons/en.svg"} onClick={() => i18n.changeLanguage("en")} />
+      <img className={positionButtons} alt="English" src={"https://unpkg.com/language-icons/icons/de.svg"} onClick={() => i18n.changeLanguage("de")} />
     </>
   );
 }
