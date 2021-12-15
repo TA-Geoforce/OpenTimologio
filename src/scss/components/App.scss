@@ -1,0 +1,93 @@
+.navbar {
+  width: 100%;
+  height: auto;
+  right: 0px;
+  background-color: #29323c !important;
+  position: fixed !important;
+}
+
+.navbar-burger {
+  color:white !important;
+}
+
+.navbar-end .positionHomeButton {
+  position: fixed;
+  left: 10px;
+}
+.position-text {
+  position:relative;
+  display: inline-block;
+  margin: auto;
+  padding: 0px 25px;
+  color: white;
+}
+
+.navbar-menu h4 {
+font-size: 0.9em;
+font-weight: normal;
+}
+
+.container.is-fluid {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.color a{
+  font-size: 1.2em;
+  font-weight: normal;
+  color: white;
+}
+
+@media only screen and (max-width: 1023px) {
+.color h4{
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+.color {
+  background-color: #29323c !important;
+  border-top: solid;
+  border-top-color: #535558;
+  padding: 0 !important;
+}
+
+.color a{
+  color:white;
+}
+
+  .navbar-menu {
+    padding-top: 0rem !important;
+    position: relative;
+    z-index: 11;
+  }
+}
+
+.navbar-menu.is-active {
+  animation: contentAnim .4s ease-in-out;
+}
+
+@keyframes contentAnim {
+  0% {
+    display: none;
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: auto;
+  }
+}
+
+button {
+  background:none;
+  border:none;
+  margin:0;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: white;
+  outline: none;
+}
+
+button:hover {
+  color: rgb(161, 158, 158);
+}
