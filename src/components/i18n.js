@@ -17,23 +17,15 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     },
     resources: {
-      en: {
-        translation: {
-            part1: "Home",
-            part2: "Version",
-            part3: "Info",
-            part4: "Welcome to OpenTimologio.",
-            part5: "The version is"
-        }
-      },
-      de: {
+      gr: {
         translation: {
           description: {
-            part1: "HomeDE",
-            part2: "VersionDE",
-            part3: "InfoDE",
-            part4: "Welcome to OpenTimologio.DE",
-            part5: "The version isDE"
+            home: "Αρχική",
+            part2: "Έκδοση",
+            part3: "Πληροφορίες",
+            part4: "Καλωσήρθατε στο OpenTimologio.",
+            part5: "Η έκδοση είναι ",
+            language: "Γλώσσα"
           }
         }
       },

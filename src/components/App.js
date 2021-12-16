@@ -6,11 +6,6 @@ import Info from "./Info.js"
 import Version from "./Version.js"
 import { useTranslation, Trans } from 'react-i18next';
 
-const lngs = {
-  en: { nativeName: 'English' },
-  de: { nativeName: 'Deutsch' }
-};
-
 function App() {
 
   const { i18n } = useTranslation();
@@ -22,6 +17,7 @@ function App() {
   const [info, setInfo] = useState(false);
   const [phoneMode, setPhoneMode] = useState(false);
   const [positionButtons, setPositionButtons] = useState("languageButtons")
+  const [displayLanguages, setDisplayLanguages] = useState("dontDisplayLanguages")
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,6 +31,7 @@ function App() {
         setOpenMenu("");
         setOpenContent("");
         setPhoneMode(false);
+        setDisplayLanguages("dontDisplayLanguages");
       }
     }
     if (typeof window !== "undefined") {
@@ -46,6 +43,18 @@ function App() {
     }
   },[])
 
+  const toggleLanguages = () => {
+    
+    if( displayLanguages === "displayLanguages")
+    {
+      setDisplayLanguages("dontDisplayLanguages");
+    }
+
+    if( displayLanguages === "dontDisplayLanguages")
+    {
+      setDisplayLanguages("displayLanguages");
+    }
+  }
   const toggleMenuNavbar = () => {
     setPhoneMode(true);
     if (openContent === "")
@@ -100,52 +109,80 @@ function App() {
       <div className="container is-fluid">
           <header className="navbar position-color">
                 <div className="onHover">
-                <div className="header-logo">
             </div>
                   <div onClick = {() => toggleMenuNavbar()} className={"navbar-burger " + openMenu} aria-label="menu" aria-hidden="true">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                   </div>
-                </div>
                 <div className={"navbar-menu color " + openContent}>
                   {openContent===""
                   ? <div className="navbar-end">
                       <div className="position-text">
-                      <h4>
-                      <button className="positionHomeButton" onClick={changeToHome}> 
-                        <Trans i18nKey="description.part1">
-                          Home
-                        </Trans>
-                      </button>
-                      <button onClick={changeToVersion}>
-                        <Trans i18nKey="description.part2">
-                          Version
-                        </Trans>
-                      </button>
-                      {" "}|{" "}
-                      <button onClick={changeToInfo}>
-                        <Trans i18nKey="description.part3">
-                          Info
-                        </Trans>
-                      </button>
+                        <h4>
+                        <button className="positionHomeButton" onClick={changeToHome}> 
+                          <Trans i18nKey="description.home">
+                            Home
+                          </Trans>
+                        </button>
+                        <button onClick={changeToVersion}>
+                          <Trans i18nKey="description.part2">
+                            Version
+                          </Trans>
+                        </button>
+                        {" "}|{" "}
+                        <button onClick={changeToInfo}>
+                          <Trans i18nKey="description.part3">
+                            Info
+                          </Trans>
+                        </button>
+                        {" "}|
+                        <button>
+                          <div className="navbar-item has-dropdown" onClick={() => toggleLanguages()}>
+                            <div className="navbar-link">
+                            <Trans i18nKey="description.language">
+                              Languages
+                            </Trans>
+                            </div>
+                            <div className={"navbar-dropdown " + displayLanguages}>
+                              <button className={positionButtons} onClick={() => i18n.changeLanguage("en")}> English </button>
+                              <button className={positionButtons} onClick={() => i18n.changeLanguage("gr")}> Greek </button>
+                            </div>
+                          </div>
+                        </button>
                       </h4>
                       </div>
                     </div>
                   :
                   <div className="color has-text-centered">
-                    <h4 className="positionHomeButton"><button onClick={changeToHome}>
-                      <Trans i18nKey="description.part1">
+                    <h4 className="navbar-item"><button onClick={changeToHome}>
+                      <Trans i18nKey="description.home">
                         Home
-                      </Trans></button></h4>
+                      </Trans></button>
+                    </h4>
                     <h4 className="navbar-item"><button onClick={changeToVersion}>
                       <Trans i18nKey="description.part2">
                         Version
-                      </Trans></button></h4>
+                      </Trans></button>
+                    </h4>
                     <h4 className="navbar-item"><button onClick={changeToInfo}>
                       <Trans i18nKey="description.part3">
                         Info
-                      </Trans></button></h4>
+                      </Trans></button>
+                    </h4>
+                    <button>
+                      <div className="navbar-item has-dropdown" onClick={() => toggleLanguages()}>
+                        <div className="navbar-link">
+                        <Trans i18nKey="description.language">
+                          Languages
+                        </Trans>
+                        </div>
+                        <div className={"navbar-dropdown " + displayLanguages}>
+                          <button className={positionButtons} onClick={() => i18n.changeLanguage("en")}> English </button>
+                          <button className={positionButtons} onClick={() => i18n.changeLanguage("gr")}> Greek </button>
+                        </div>
+                      </div>
+                    </button>
                   </div>
                     }
                 </div>
@@ -154,8 +191,6 @@ function App() {
       {home === true && <Home/>}
       {version === true && <Version/>}
       {info === true && <Info/>}
-      <img className={positionButtons} alt="English" src={"https://unpkg.com/language-icons/icons/en.svg"} onClick={() => i18n.changeLanguage("en")} />
-      <img className={positionButtons} alt="English" src={"https://unpkg.com/language-icons/icons/de.svg"} onClick={() => i18n.changeLanguage("de")} />
     </>
   );
 }

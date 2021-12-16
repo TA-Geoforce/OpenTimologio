@@ -13,7 +13,9 @@
 .navbar-end .positionHomeButton {
   position: fixed;
   left: 10px;
+  margin-top: 8px;
 }
+
 .position-text {
   position:relative;
   display: inline-block;
@@ -23,8 +25,8 @@
 }
 
 .navbar-menu h4 {
-font-size: 0.9em;
-font-weight: normal;
+  font-size: 0.9em;
+  font-weight: normal;
 }
 
 .container.is-fluid {
@@ -39,9 +41,23 @@ font-weight: normal;
 }
 
 @media only screen and (max-width: 1023px) {
+  
 .color h4{
   font-size: 0.9em;
   font-weight: normal;
+}
+
+.color.has-text-centered > button {
+  border: 2px solid #535558;
+  background-color: transparent;
+}
+
+.navbar-link {
+  font-size: 1.2em;
+}
+
+.displayLanguages {
+  margin-left: 10px;
 }
 
 .color {
@@ -49,6 +65,7 @@ font-weight: normal;
   border-top: solid;
   border-top-color: #535558;
   padding: 0 !important;
+  margin-bottom: 10px;
 }
 
 .color a{
@@ -93,23 +110,54 @@ button:hover {
 }
 
 .languageButtons {
-  width: 30px;
-  height: 30px;
-  margin-top: 62px;
+  font-size: 15px;
+  width: 50%;
+  height: 100%;
   position: relative;
   z-index: 1000;
   color: white;
-  margin-right: 10px;
-  margin-left: 5px;
+  display: flex;
 }
 
 .languageButtonsPhone {
-  width: 30px;
-  height: 30px;
-  margin-top: 172px;
+  font-size: 15px;
+  width: 50%;
+  height: 100%;
   position: relative;
   z-index: 1000;
   color: white;
-  margin-right: 10px;
-  margin-left: 5px;
+  display: flex;
+}
+
+.displayLanguages {
+  display: block !important;
+}
+
+.dontDisplayLanguages {
+  display: none !important;
+}
+
+.navbar-dropdown {
+  padding-top: 0rem!important;
+  padding-bottom: 0rem !important;
+  background-color: #29323c !important;
+  border-top: none !important;
+  > button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    width: 100%;
+  }
+}
+
+.navbar-link {
+  color: white !important;
+  background-color: #29323c !important;
+}
+
+.navbar-link:hover {
+  color: rgb(161, 158, 158) !important;
 }

@@ -8,7 +8,7 @@ function Version() {
     <div className="positionVersion">
         <div className= "has-text-centered">
         <Trans i18nKey="description.part5">
-          The version is
+          The version is {" "}
         </Trans> {pjson.version}.
         </div>
     </div>
