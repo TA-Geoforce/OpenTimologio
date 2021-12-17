@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="positionHome">
         <div className= "has-text-centered">
-        <Trans i18nKey="description.part4">
+        <Trans i18nKey="description.welcome">
           Welcome to OpenTimologio.
         </Trans>
         </div>
