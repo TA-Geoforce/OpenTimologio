@@ -21,10 +21,10 @@ i18n
         translation: {
           description: {
             home: "Αρχική",
-            part2: "Έκδοση",
-            part3: "Πληροφορίες",
-            part4: "Καλωσήρθατε στο OpenTimologio.",
-            part5: "Η έκδοση είναι ",
+            version: "Έκδοση",
+            info: "Πληροφορίες",
+            welcome: "Καλωσήρθατε στο OpenTimologio.",
+            version_info: "Η έκδοση είναι ",
             language: "Γλώσσα"
           }
         }

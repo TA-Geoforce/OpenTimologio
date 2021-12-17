@@ -126,13 +126,13 @@ function App() {
                           </Trans>
                         </button>
                         <button onClick={changeToVersion}>
-                          <Trans i18nKey="description.part2">
+                          <Trans i18nKey="description.version">
                             Version
                           </Trans>
                         </button>
                         {" "}|{" "}
                         <button onClick={changeToInfo}>
-                          <Trans i18nKey="description.part3">
+                          <Trans i18nKey="description.info">
                             Info
                           </Trans>
                         </button>
@@ -161,12 +161,12 @@ function App() {
                       </Trans></button>
                     </h4>
                     <h4 className="navbar-item"><button onClick={changeToVersion}>
-                      <Trans i18nKey="description.part2">
+                      <Trans i18nKey="description.version">
                         Version
                       </Trans></button>
                     </h4>
                     <h4 className="navbar-item"><button onClick={changeToInfo}>
-                      <Trans i18nKey="description.part3">
+                      <Trans i18nKey="description.info">
                         Info
                       </Trans></button>
                     </h4>
