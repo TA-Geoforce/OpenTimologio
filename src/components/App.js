@@ -16,7 +16,7 @@ function App() {
   const [home, setHome] = useState(true);
   const [version, setVersion] = useState(false);
   const [info, setInfo] = useState(false);
-  const [phoneMode, setPhoneMode] = useState(false);
+  const [mobileMode, setMobileMode] = useState(false);
   const [user, setUser] = useState(false);
   const [books, setBooks] = useState(false);
   const [positionButtons, setPositionButtons] = useState("languageButtons")
@@ -33,7 +33,7 @@ function App() {
         setPositionButtons("languageButtons");
         setOpenMenu("");
         setOpenContent("");
-        setPhoneMode(false);
+        setMobileMode(false);
         setDisplayLanguages("dontDisplayLanguages");
       }
     }
@@ -59,12 +59,12 @@ function App() {
     }
   }
   const toggleMenuNavbar = () => {
-    setPhoneMode(true);
+    setMobileMode(true);
     if (openContent === "")
     {
       setOpenContent("is-active");
       setOpenMenu("is-active");
-      setPositionButtons("languageButtonsPhone");
+      setPositionButtons("languageButtonsMobile");
     }
     else
     {
@@ -74,40 +74,40 @@ function App() {
     }
   }
 
-  const changeToVersion = (e) => {
+  const goToVersion = (e) => {
     e.preventDefault();
     setVersion(true);
     setHome(false);
     setInfo(false);
     setUser(false);
     setBooks(false);
-    if(phoneMode === true)
+    if(mobileMode === true)
     {
       toggleMenuNavbar();
     }
   }
 
-  const changeToInfo = (e) => {
+  const goToInfo = (e) => {
     e.preventDefault();
     setVersion(false);
     setHome(false);
     setUser(false);
     setBooks(false);
     setInfo(true);
-    if(phoneMode === true)
+    if(mobileMode === true)
     {
       toggleMenuNavbar();
     }
   }
 
-  const changeToHome = (e) => {
+  const goToHome = (e) => {
     e.preventDefault();
     setVersion(false);
     setHome(true);
     setInfo(false);
     setUser(false);
     setBooks(false);
-    if(phoneMode === true)
+    if(mobileMode === true)
     {
       toggleMenuNavbar();
     }
@@ -120,7 +120,7 @@ function App() {
     setInfo(false);
     setUser(true);
     setBooks(false);
-    if(phoneMode === true && openContent === "is-active")
+    if(mobileMode === true && openContent === "is-active")
     {
       toggleMenuNavbar();
     }
@@ -133,7 +133,7 @@ function App() {
     setInfo(false);
     setUser(false);
     setBooks(true);
-    if(phoneMode === true && openContent === "is-active")
+    if(mobileMode === true && openContent === "is-active")
     {
       toggleMenuNavbar();
     }
@@ -151,7 +151,7 @@ function App() {
                     <span aria-hidden="true"></span>
                   </div>
                 <div className={"navbar-menu color " + openContent}>
-                    <Desktop changeToHome = {changeToHome} changeToVersion = {changeToVersion} changeToInfo = {changeToInfo} toggleLanguages = {toggleLanguages} displayLanguages = {displayLanguages} positionButtons = {positionButtons} openContent = {openContent}/>
+                    <Desktop goToHome = {goToHome} goToVersion = {goToVersion} goToInfo = {goToInfo} toggleLanguages = {toggleLanguages} displayLanguages = {displayLanguages} positionButtons = {positionButtons} openContent = {openContent}/>
                 </div>
                 <div className = "navbar leftSide"> 
                   <button className="fa fa-address-book buttonUser" onClick={changeToUserAccount} title="User Account"></button>

@@ -1,7 +1,7 @@
 import React from "react"
 import { useTranslation, Trans } from 'react-i18next';
 
-function Desktop({changeToHome, changeToVersion, changeToInfo, toggleLanguages, displayLanguages, positionButtons, openContent}) {
+function Navbar({goToHome, goToVersion, goToInfo, toggleLanguages, displayLanguages, positionButtons, openContent}) {
 
 const { i18n } = useTranslation();
 
@@ -9,14 +9,14 @@ const { i18n } = useTranslation();
     <div className={openContent === "" ? "navbar-end" : "color has-text-centered"} >
         <div className={openContent === "" ? "position-text" : ""}>
         <h4 className={openContent === "" ? "" : "navbar-item"}>
-        <button className={openContent === "" ? "positionHomeButton" : ""} onClick={changeToHome}> 
+        <button className={openContent === "" ? "positionHomeButton" : ""} onClick={goToHome}> 
             <Trans i18nKey="description.home">
                 Αρχική
             </Trans>
         </button>
         </h4>
         <h4 className={openContent === "" ? "positionCategory" : "navbar-item"}>
-            <button onClick={changeToVersion}>
+            <button onClick={goToVersion}>
                 <Trans i18nKey="description.version">
                     Έκδοση
                 </Trans>
@@ -24,7 +24,7 @@ const { i18n } = useTranslation();
         </h4>
             {openContent === "" ? <div className="positionCategory">{" "}|{" "}</div> : null}
         <h4 className={openContent === "" ? "positionCategory" : "navbar-item"}>
-            <button onClick={changeToInfo}>
+            <button onClick={goToInfo}>
                 <Trans i18nKey="description.info">
                     Πληροφορίες
                 </Trans>
@@ -40,8 +40,8 @@ const { i18n } = useTranslation();
             </Trans>
             </div>
             <div className={"navbar-dropdown " + displayLanguages}>
-                <button className="languageButtonsPhone" onClick={() => i18n.changeLanguage("en")}> English </button>
-                <button className="languageButtonsPhone" onClick={() => i18n.changeLanguage("gr")}> Greek </button>
+                <button className="languageButtonsMobile" onClick={() => i18n.changeLanguage("en")}> English </button>
+                <button className="languageButtonsMobile" onClick={() => i18n.changeLanguage("gr")}> Greek </button>
             </div>
             </div>
         </button>
@@ -51,4 +51,4 @@ const { i18n } = useTranslation();
   );
 }
 
-export default Desktop;
+export default Navbar;
