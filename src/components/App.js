@@ -7,7 +7,6 @@ import Version from "./Version.js"
 import User from "./User.js"
 import Books from "./Books.js"
 import Desktop from "./Desktop.js"
-import Phone from "./Phone.js"
 
 function App() {
 
@@ -22,7 +21,7 @@ function App() {
   const [books, setBooks] = useState(false);
   const [positionButtons, setPositionButtons] = useState("languageButtons")
   const [displayLanguages, setDisplayLanguages] = useState("dontDisplayLanguages")
-
+  
   useEffect(() => {
     const handleResize = () => {
       if(windowSize <= 1023 && openContent === "is-active" && openMenu === "is-active")
@@ -152,11 +151,7 @@ function App() {
                     <span aria-hidden="true"></span>
                   </div>
                 <div className={"navbar-menu color " + openContent}>
-                  {openContent===""
-                  ? <Desktop changeToHome = {changeToHome} changeToVersion = {changeToVersion} changeToInfo = {changeToInfo} toggleLanguages = {toggleLanguages} displayLanguages = {displayLanguages} positionButtons = {positionButtons}/>
-                  :
-                    <Phone changeToHome = {changeToHome} changeToVersion = {changeToVersion} changeToInfo = {changeToInfo} toggleLanguages = {toggleLanguages} displayLanguages = {displayLanguages} positionButtons = {positionButtons}/>
-                    }
+                    <Desktop changeToHome = {changeToHome} changeToVersion = {changeToVersion} changeToInfo = {changeToInfo} toggleLanguages = {toggleLanguages} displayLanguages = {displayLanguages} positionButtons = {positionButtons} openContent = {openContent}/>
                 </div>
                 <div className = "navbar leftSide"> 
                 <button className="fa fa-address-book buttonUser" onClick={changeToUserAccount} title="User Account"></button>

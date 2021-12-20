@@ -24,8 +24,10 @@ i18n
             version: "Version",
             info: "Info",
             welcome: "Welcome to OpenTimologio.",
-            version_info: "The version is",
-            language: "Language"
+            version_info: "The version is ",
+            language: "Language",
+            popUser: "Account User",
+            popBooks: "Books"
           }
         }
       },

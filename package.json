@@ -1,6 +1,6 @@
 {
   "name": "react-electron",
-  "version": "0.1.0",
+  "version": "0.0.1-alpha",
   "private": true,
   "description": "Electron and React app",
   "main": "public/electron.js",

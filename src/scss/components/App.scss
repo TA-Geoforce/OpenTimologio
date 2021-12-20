@@ -18,7 +18,7 @@
 
 .position-text {
   position:relative;
-  display: inline-block;
+  display: flex;
   margin: auto;
   padding: 0px 25px;
   color: white;
@@ -55,10 +55,6 @@
 
 .navbar-link {
   font-size: 1.2em;
-}
-
-.displayLanguages {
-  margin-left: 10px;
 }
 
 .color {
@@ -110,16 +106,6 @@ button:hover {
   color: rgb(161, 158, 158);
 }
 
-.languageButtons {
-  font-size: 15px;
-  width: 50%;
-  height: 100%;
-  position: relative;
-  z-index: 1000;
-  color: white;
-  display: flex;
-}
-
 .languageButtonsPhone {
   font-size: 15px;
   width: 50%;
@@ -128,6 +114,7 @@ button:hover {
   z-index: 1000;
   color: white;
   display: flex;
+  margin-left: 10px;
 }
 
 .displayLanguages {
@@ -155,6 +142,7 @@ button:hover {
 }
 
 .navbar-link {
+  font-size: 1em;
   color: white !important;
   background-color: #29323c !important;
 }
@@ -194,6 +182,12 @@ button:hover {
   }
 }
 
+@media only screen and (max-width: 1153px) {
+  .buttonUser {
+    margin-left: 20%;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .buttonUser {
     margin-left: 15%;
@@ -204,4 +198,8 @@ button:hover {
   .buttonUser {
     margin-left: 8%;
   }
+}
+
+.positionCategory {
+  margin-top: 9px;
 }
