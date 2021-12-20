@@ -120,7 +120,7 @@ function App() {
     setInfo(false);
     setUser(true);
     setBooks(false);
-    if(phoneMode === true)
+    if(phoneMode === true && openContent === "is-active")
     {
       toggleMenuNavbar();
     }
@@ -133,7 +133,7 @@ function App() {
     setInfo(false);
     setUser(false);
     setBooks(true);
-    if(phoneMode === true)
+    if(phoneMode === true && openContent === "is-active")
     {
       toggleMenuNavbar();
     }
@@ -154,8 +154,8 @@ function App() {
                     <Desktop changeToHome = {changeToHome} changeToVersion = {changeToVersion} changeToInfo = {changeToInfo} toggleLanguages = {toggleLanguages} displayLanguages = {displayLanguages} positionButtons = {positionButtons} openContent = {openContent}/>
                 </div>
                 <div className = "navbar leftSide"> 
-                <button className="fa fa-address-book buttonUser" onClick={changeToUserAccount} title="User Account"></button>
-                <button className="fa fa-book buttonUser" onClick={changeToUserBooks} title="User Books"></button>
+                  <button className="fa fa-address-book buttonUser" onClick={changeToUserAccount} title="User Account"></button>
+                  <button className="fa fa-book buttonUser" onClick={changeToUserBooks} title="User Books"></button>
                 </div>
             </header>
             </div>
