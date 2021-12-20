@@ -162,3 +162,34 @@ button:hover {
 .navbar-link:hover {
   color: rgb(161, 158, 158) !important;
 }
+
+.leftSide {
+  height: 100%;
+  width: 5%;
+  left: 0px;
+  // border-right: 2px solid #535558;
+  z-index: -1 !important;
+  display: block !important;
+}
+
+.buttonUser {
+  margin-top: 100%;
+  margin-left: 25%;
+  width: 50%;
+  height: 5%;
+  background-color: transparent;
+  border:none;
+  color: white;
+  cursor: pointer;
+  font-size: 28px !important;
+  outline: none;
+}
+
+@media only screen and (max-width: 1023px) {
+  .buttonUser {
+    font-size: 18px !important;
+  }
+  .leftSide {
+    width: 8%;
+  }
+}

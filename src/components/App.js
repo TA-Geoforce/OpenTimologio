@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Home from "./Home.js"
 import Info from "./Info.js"
 import Version from "./Version.js"
+import User from "./User.js"
+import Books from "./Books.js"
 import { useTranslation, Trans } from 'react-i18next';
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
   const [version, setVersion] = useState(false);
   const [info, setInfo] = useState(false);
   const [phoneMode, setPhoneMode] = useState(false);
+  const [user, setUser] = useState(false);
+  const [books, setBooks] = useState(false);
   const [positionButtons, setPositionButtons] = useState("languageButtons")
   const [displayLanguages, setDisplayLanguages] = useState("dontDisplayLanguages")
 
@@ -76,6 +80,8 @@ function App() {
     setVersion(true);
     setHome(false);
     setInfo(false);
+    setUser(false);
+    setBooks(false);
     if(phoneMode === true)
     {
       toggleMenuNavbar();
@@ -86,6 +92,8 @@ function App() {
     e.preventDefault();
     setVersion(false);
     setHome(false);
+    setUser(false);
+    setBooks(false);
     setInfo(true);
     if(phoneMode === true)
     {
@@ -98,6 +106,34 @@ function App() {
     setVersion(false);
     setHome(true);
     setInfo(false);
+    setUser(false);
+    setBooks(false);
+    if(phoneMode === true)
+    {
+      toggleMenuNavbar();
+    }
+  }
+
+  const changeToUserAccount = (e) => {
+    e.preventDefault();
+    setVersion(false);
+    setHome(false);
+    setInfo(false);
+    setUser(true);
+    setBooks(false);
+    if(phoneMode === true)
+    {
+      toggleMenuNavbar();
+    }
+  }
+
+  const changeToUserBooks = (e) => {
+    e.preventDefault();
+    setVersion(false);
+    setHome(false);
+    setInfo(false);
+    setUser(false);
+    setBooks(true);
     if(phoneMode === true)
     {
       toggleMenuNavbar();
@@ -122,18 +158,18 @@ function App() {
                         <h4>
                         <button className="positionHomeButton" onClick={changeToHome}> 
                           <Trans i18nKey="description.home">
-                            Home
+                            Αρχική
                           </Trans>
                         </button>
                         <button onClick={changeToVersion}>
                           <Trans i18nKey="description.version">
-                            Version
+                            Έκδοση
                           </Trans>
                         </button>
                         {" "}|{" "}
                         <button onClick={changeToInfo}>
                           <Trans i18nKey="description.info">
-                            Info
+                            Πληροφορίες
                           </Trans>
                         </button>
                         {" "}|
@@ -141,7 +177,7 @@ function App() {
                           <div className="navbar-item has-dropdown" onClick={() => toggleLanguages()}>
                             <div className="navbar-link">
                             <Trans i18nKey="description.language">
-                              Languages
+                              Γλώσσα
                             </Trans>
                             </div>
                             <div className={"navbar-dropdown " + displayLanguages}>
@@ -157,24 +193,24 @@ function App() {
                   <div className="color has-text-centered">
                     <h4 className="navbar-item"><button onClick={changeToHome}>
                       <Trans i18nKey="description.home">
-                        Home
+                        Αρχική
                       </Trans></button>
                     </h4>
                     <h4 className="navbar-item"><button onClick={changeToVersion}>
                       <Trans i18nKey="description.version">
-                        Version
+                        Έκδοση
                       </Trans></button>
                     </h4>
                     <h4 className="navbar-item"><button onClick={changeToInfo}>
                       <Trans i18nKey="description.info">
-                        Info
+                        Πληροφορίες
                       </Trans></button>
                     </h4>
                     <button>
                       <div className="navbar-item has-dropdown" onClick={() => toggleLanguages()}>
                         <div className="navbar-link">
                         <Trans i18nKey="description.language">
-                          Languages
+                          Γλώσσα
                         </Trans>
                         </div>
                         <div className={"navbar-dropdown " + displayLanguages}>
@@ -186,11 +222,17 @@ function App() {
                   </div>
                     }
                 </div>
+                <div className = "navbar leftSide"> 
+                <button class="fa fa-address-book buttonUser" onClick={changeToUserAccount} title="User Account"></button>
+                <button class="fa fa-book buttonUser" onClick={changeToUserBooks} title="User Books"></button>
+                </div>
             </header>
-      </div>
+            </div>
       {home === true && <Home/>}
       {version === true && <Version/>}
       {info === true && <Info/>}
+      {user === true && <User/>}
+      {books === true && <Books/>}
     </>
   );
 }

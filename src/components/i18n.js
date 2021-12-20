@@ -12,20 +12,20 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     debug: true,
-    fallbackLng: 'en',
+    fallbackLng: 'gr',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
     resources: {
-      gr: {
+      en: {
         translation: {
           description: {
-            home: "Αρχική",
-            version: "Έκδοση",
-            info: "Πληροφορίες",
-            welcome: "Καλωσήρθατε στο OpenTimologio.",
-            version_info: "Η έκδοση είναι ",
-            language: "Γλώσσα"
+            home: "Home",
+            version: "Version",
+            info: "Info",
+            welcome: "Welcome to OpenTimologio.",
+            version_info: "The version is",
+            language: "Language"
           }
         }
       },
