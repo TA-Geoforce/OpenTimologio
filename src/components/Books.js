@@ -5,7 +5,7 @@ function Books() {
   return (
     <div className="positionHome">
         <div className= "has-text-centered">
-          Books
+          Βιβλία
         </div>
     </div>
   );

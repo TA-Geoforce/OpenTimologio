@@ -6,7 +6,7 @@ import Info from "./Info.js"
 import Version from "./Version.js"
 import User from "./User.js"
 import Books from "./Books.js"
-import Desktop from "./Desktop.js"
+import Navbar from "./Navbar.js"
 
 function App() {
 
@@ -151,7 +151,7 @@ function App() {
                     <span aria-hidden="true"></span>
                   </div>
                 <div className={"navbar-menu color " + openContent}>
-                    <Desktop goToHome = {goToHome} goToVersion = {goToVersion} goToInfo = {goToInfo} toggleLanguages = {toggleLanguages} displayLanguages = {displayLanguages} positionButtons = {positionButtons} openContent = {openContent}/>
+                    <Navbar goToHome = {goToHome} goToVersion = {goToVersion} goToInfo = {goToInfo} toggleLanguages = {toggleLanguages} displayLanguages = {displayLanguages} positionButtons = {positionButtons} openContent = {openContent}/>
                 </div>
                 <div className = "navbar leftSide"> 
                   <button className="fa fa-address-book buttonUser" onClick={changeToUserAccount} title="User Account"></button>

@@ -5,7 +5,7 @@ function User() {
   return (
     <div className="positionHome">
         <div className= "has-text-centered">
-          UserAccount
+          Λογαριασμός Χρήστη
         </div>
     </div>
   );
