@@ -62,7 +62,7 @@
   height: 100rem;
   width: 70px;
   left: 0px;
-  z-index: 100 !important;
+  z-index: 10 !important;
   display: block !important;
   border-top: 2px solid #535558;
 }
@@ -80,7 +80,7 @@
   top: 90%;
   position: absolute;
   left: 17px;
-  z-index: 100;
+  z-index: 20;
 }
 
 .buttonBooks {
@@ -96,7 +96,7 @@
   top: 80px;
   position: absolute;
   left: 17px;
-  z-index: 100;
+  z-index: 20;
 }
 
 @media only screen and (max-width: 1023px) {

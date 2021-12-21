@@ -19,7 +19,6 @@ function App() {
   const [mobileMode, setMobileMode] = useState(false);
   const [user, setUser] = useState(false);
   const [books, setBooks] = useState(false);
-  const [positionButtons, setPositionButtons] = useState("languageButtons")
   const [displayLanguages, setDisplayLanguages] = useState("dontDisplayLanguages")
   
   useEffect(() => {
@@ -30,7 +29,6 @@ function App() {
       }
       else
       {
-        setPositionButtons("languageButtons");
         setOpenMenu("");
         setOpenContent("");
         setMobileMode(false);
@@ -64,13 +62,11 @@ function App() {
     {
       setOpenContent("is-active");
       setOpenMenu("is-active");
-      setPositionButtons("languageButtonsMobile");
     }
     else
     {
       setOpenContent("");
       setOpenMenu("");
-      setPositionButtons("languageButtons");
     }
   }
 
