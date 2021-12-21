@@ -1,7 +1,7 @@
 import React from "react"
 import { useTranslation, Trans } from 'react-i18next';
 import "../scss/components/Navbar.scss"
-function Navbar({goToHome, goToVersion, goToInfo, toggleLanguages, displayLanguages, positionButtons, openContent}) {
+function Navbar({goToHome, goToVersion, goToInfo, toggleLanguages, displayLanguages, openContent}) {
 
 const { i18n } = useTranslation();
 
@@ -31,21 +31,19 @@ const { i18n } = useTranslation();
             </button>
         </h4>
         {openContent === "" ? <div className="positionCategory">{" "}|</div> : null}
-        <h4>
-        <button>
-            <div className="navbar-item has-dropdown" onClick={() => toggleLanguages()}>
-            <div className="navbar-link">
-            <Trans i18nKey="description.language">
-                Γλώσσα
-            </Trans>
-            </div>
-            <div className={"navbar-dropdown " + displayLanguages}>
-                <button className="languageButtonsMobile" onClick={() => i18n.changeLanguage("en")}> English </button>
-                <button className="languageButtonsMobile" onClick={() => i18n.changeLanguage("gr")}> Greek </button>
-            </div>
-            </div>
-        </button>
-        </h4>
+            <h4 className="languageMargin">
+                <div className="navbar-item has-dropdown" onClick={() => toggleLanguages()}>
+                <button className="navbar-link">
+                    <Trans i18nKey="description.language">
+                        Γλώσσα
+                    </Trans>
+                </button>
+                <div className={"navbar-dropdown " + displayLanguages}>
+                    <button className="languageButtonsMobile" onClick={() => i18n.changeLanguage("en")}> English </button>
+                    <button className="languageButtonsMobile" onClick={() => i18n.changeLanguage("gr")}> Greek </button>
+                </div>
+                </div>
+            </h4>
         </div>
     </div>
   );

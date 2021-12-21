@@ -60,7 +60,7 @@
 
 .leftSide {
   height: 100rem;
-  width: 5%;
+  width: 70px;
   left: 0px;
   z-index: 100 !important;
   display: block !important;
@@ -68,51 +68,43 @@
 }
 
 .buttonUser {
-  margin-top: 100%;
-  margin-left: 25%;
-  width: 50%;
-  height: 5%;
   background-color: transparent;
-  border:none;
+  border: none;
   color: white;
   cursor: pointer;
   font-size: 28px !important;
   outline: none;
+  outline-color: currentcolor;
+  outline-style: none;
+  outline-width: medium;
+  bottom: 95%;
+  position: absolute;
+  left: 25%;
+}
+
+.buttonBooks {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 28px !important;
+  outline: none;
+  outline-color: currentcolor;
+  outline-style: none;
+  outline-width: medium;
+  top: 40%;
+  position: absolute;
+  left: 25%;
 }
 
 @media only screen and (max-width: 1023px) {
   .buttonUser {
     font-size: 18px !important;
+    left: 30%
   }
-  .leftSide {
-    width: 8%;
+  
+  .buttonBooks {
+    font-size: 18px !important;
+    left: 30%
   }
-}
-
-@media only screen and (max-width: 1153px) {
-  .buttonUser {
-    margin-left: 20%;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .buttonUser {
-    margin-left: 15%;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .buttonUser {
-    margin-left: 8%;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .leftSide {
-    width: 11%;
-  }
-}
-
-.positionCategory {
-  margin-top: 9px;
 }

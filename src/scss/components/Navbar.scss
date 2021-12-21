@@ -1,8 +1,7 @@
 .navbar-end .positionHomeButton {
     position: fixed;
     left: 10px;
-    margin-top: 8px;
-  }
+}
   
 .position-text {
     position:relative;
@@ -12,28 +11,47 @@
     color: white;
 }
 
+.navbar-link {
+    padding: 0px !important;
+}
+
 @media only screen and (max-width: 1023px) {
-  .color h4{
-    font-size: 0.9em;
-    font-weight: normal;
-  }
-  
-  .color.has-text-centered > button {
-    border: 2px solid #535558;
-    background-color: transparent;
-    outline: none;
-  }
-  
-  .navbar-link {
-    font-size: 1.2em;
-  }
-  
-  .color {
-    background-color: #29323c !important;
-    border-top: solid;
-    border-top-color: #535558;
-    padding: 0 !important;
-  }
+    .color h4{
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+
+    .color.has-text-centered > button {
+        border: 2px solid #535558;
+        background-color: transparent;
+        outline: none;
+    }
+
+    .navbar-item.has-dropdown.navbar-link {
+        padding: 0rem !important;
+        padding-bottom: 10px;
+    }
+
+    .navbar-item.has-dropdown {
+        padding-bottom: 10px;
+    }
+
+    .navbar-link {
+        display: initial;
+    }
+
+    .navbar-link:not(.is-arrowless)::after {
+        position: sticky;
+        margin-top: -19px !important;
+        margin-left: 90px !important;
+    }
+
+    .color {
+        background-color: #29323c !important;
+        border-top: solid;
+        border-top-color: #535558;
+        padding: 0 !important;
+    }
 }
 
 h4 > button {
@@ -44,7 +62,17 @@ h4 > button {
     cursor: pointer;
     color: white;
     outline: none;
-  }
+}
+
+h4 button {
+    background:none;
+    border:none;
+    margin:0;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
   
   button:hover {
     color: rgb(161, 158, 158);
@@ -58,7 +86,6 @@ h4 > button {
     z-index: 1000;
     color: white;
     display: flex;
-    margin-left: 10px;
   }
   
   .displayLanguages {
@@ -71,27 +98,36 @@ h4 > button {
 
   
 .navbar-dropdown {
-    padding-top: 0rem!important;
-    padding-bottom: 0rem !important;
     background-color: #29323c !important;
     border-top: none !important;
     > button {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      background-color: transparent;
-      overflow: hidden;
-      outline: none;
-      border: none;
-      width: 100%;
+        display: table;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: transparent;
+        overflow: hidden;
+        outline: none;
+        border: none;
+        width: 100%;
     }
 }
   
 .navbar-link {
-font-size: 1em;
-color: white !important;
-background-color: #29323c !important;
+    color: white !important;
+    background-color: #29323c !important;
 }
 
 .navbar-link:hover {
-color: rgb(161, 158, 158) !important;
+    color: rgb(161, 158, 158) !important;
+}
+
+.languageMargin {
+    margin-left: 4px;
+    margin-top: 2px;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+    position: sticky;
+    margin-bottom: 8px;
+    margin-left: 12px;
 }
