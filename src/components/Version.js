@@ -1,4 +1,5 @@
 import React from "react"
+import { Trans } from 'react-i18next';
 var pjson = require('../../package.json');
 
 function Version() {
@@ -6,7 +7,9 @@ function Version() {
   return (
     <div className="positionVersion">
         <div className= "has-text-centered">
-           The Version is {pjson.version}.
+        <Trans i18nKey="description.version_info">
+          Η έκδοση είναι {" "}
+        </Trans> {pjson.version}.
         </div>
     </div>
   );

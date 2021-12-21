@@ -3,28 +3,24 @@
   height: auto;
   right: 0px;
   background-color: #29323c !important;
-  position: fixed !important;
+  position: relative !important;
+}
+
+.position-color {
+  top: 0px;
+}
+
+.section.is-large {
+  padding: 0rem !important;
 }
 
 .navbar-burger {
   color:white !important;
 }
 
-.navbar-end .positionHomeButton {
-  position: fixed;
-  left: 10px;
-}
-.position-text {
-  position:relative;
-  display: inline-block;
-  margin: auto;
-  padding: 0px 25px;
-  color: white;
-}
-
 .navbar-menu h4 {
-font-size: 0.9em;
-font-weight: normal;
+  font-size: 0.9em;
+  font-weight: normal;
 }
 
 .container.is-fluid {
@@ -39,22 +35,6 @@ font-weight: normal;
 }
 
 @media only screen and (max-width: 1023px) {
-.color h4{
-  font-size: 0.9em;
-  font-weight: normal;
-}
-
-.color {
-  background-color: #29323c !important;
-  border-top: solid;
-  border-top-color: #535558;
-  padding: 0 !important;
-}
-
-.color a{
-  color:white;
-}
-
   .navbar-menu {
     padding-top: 0rem !important;
     position: relative;
@@ -78,16 +58,55 @@ font-weight: normal;
   }
 }
 
-button {
-  background:none;
-  border:none;
-  margin:0;
-  font-size: 1.2em;
-  cursor: pointer;
-  color: white;
-  outline: none;
+.leftSide {
+  height: 100rem;
+  width: 70px;
+  left: 0px;
+  z-index: 10 !important;
+  display: block !important;
+  border-top: 2px solid #535558;
 }
 
-button:hover {
-  color: rgb(161, 158, 158);
+.buttonUser {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 28px !important;
+  outline: none;
+  outline-color: currentcolor;
+  outline-style: none;
+  outline-width: medium;
+  top: 90%;
+  position: absolute;
+  left: 17px;
+  z-index: 20;
+}
+
+.buttonBooks {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 28px !important;
+  outline: none;
+  outline-color: currentcolor;
+  outline-style: none;
+  outline-width: medium;
+  top: 80px;
+  position: absolute;
+  left: 17px;
+  z-index: 20;
+}
+
+@media only screen and (max-width: 1023px) {
+  .buttonUser {
+    font-size: 18px !important;
+    left: 21px;
+  }
+  
+  .buttonBooks {
+    font-size: 18px !important;
+    left: 21px;
+  }
 }
