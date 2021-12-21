@@ -77,9 +77,10 @@
   outline-color: currentcolor;
   outline-style: none;
   outline-width: medium;
-  bottom: 95%;
+  top: 90%;
   position: absolute;
-  left: 25%;
+  left: 17px;
+  z-index: 100;
 }
 
 .buttonBooks {
@@ -92,19 +93,20 @@
   outline-color: currentcolor;
   outline-style: none;
   outline-width: medium;
-  top: 40%;
+  top: 80px;
   position: absolute;
-  left: 25%;
+  left: 17px;
+  z-index: 100;
 }
 
 @media only screen and (max-width: 1023px) {
   .buttonUser {
     font-size: 18px !important;
-    left: 30%
+    left: 21px;
   }
   
   .buttonBooks {
     font-size: 18px !important;
-    left: 30%
+    left: 21px;
   }
 }

@@ -141,7 +141,6 @@ function App() {
 
   return (
     <>
-    <section class="section is-large">
       <div className="container is-fluid">
         <header className="navbar position-color">
               <div className="onHover">
@@ -156,18 +155,16 @@ function App() {
               </div>
           </header>
         </div>
-    </section>
-            <section class="section is-large">
-              {home === true && <Home/>}
-              {version === true && <Version/>}
-              {info === true && <Info/>}
-              {user === true && <User/>}
-              {books === true && <Books/>}
-              <div className = "navbar leftSide">
-                  <button className="fa fa-book buttonBooks" onClick={changeToUserBooks} title="User Books"></button>
-                  <button className="fa fa-address-book buttonUser" onClick={changeToUserAccount} title="User Account"></button>
-                </div>
-            </section>
+        {home === true && <Home/>}
+        {version === true && <Version/>}
+        {info === true && <Info/>}
+        {user === true && <User/>}
+        {books === true && <Books/>}
+        <div className = "navbar leftSide">
+            
+        </div>
+        <button className="fa fa-book buttonBooks" onClick={changeToUserBooks} title="User Books"></button>
+            <button className="fa fa-address-book buttonUser" onClick={changeToUserAccount} title="User Account"></button>
     </>
   );
 }
