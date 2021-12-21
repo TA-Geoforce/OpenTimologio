@@ -141,6 +141,7 @@ function App() {
 
   return (
     <>
+    <section class="section is-large">
       <div className="container is-fluid">
           <header className="navbar position-color">
                 <div className="onHover">
@@ -153,17 +154,21 @@ function App() {
                 <div className={"navbar-menu color " + openContent}>
                     <Navbar goToHome = {goToHome} goToVersion = {goToVersion} goToInfo = {goToInfo} toggleLanguages = {toggleLanguages} displayLanguages = {displayLanguages} positionButtons = {positionButtons} openContent = {openContent}/>
                 </div>
-                <div className = "navbar leftSide"> 
+                
+            </header>
+            </div>
+            </section>
+            <section class="section is-large">
+              {home === true && <Home/>}
+              {version === true && <Version/>}
+              {info === true && <Info/>}
+              {user === true && <User/>}
+              {books === true && <Books/>}
+              <div className = "navbar leftSide"> 
                   <button className="fa fa-address-book buttonUser" onClick={changeToUserAccount} title="User Account"></button>
                   <button className="fa fa-book buttonUser" onClick={changeToUserBooks} title="User Books"></button>
                 </div>
-            </header>
-            </div>
-      {home === true && <Home/>}
-      {version === true && <Version/>}
-      {info === true && <Info/>}
-      {user === true && <User/>}
-      {books === true && <Books/>}
+            </section>
     </>
   );
 }

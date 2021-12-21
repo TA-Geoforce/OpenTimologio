@@ -1,6 +1,6 @@
 import React from "react"
 import { useTranslation, Trans } from 'react-i18next';
-
+import "../scss/components/Navbar.scss"
 function Navbar({goToHome, goToVersion, goToInfo, toggleLanguages, displayLanguages, positionButtons, openContent}) {
 
 const { i18n } = useTranslation();
