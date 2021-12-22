@@ -137,6 +137,7 @@ function App() {
 
   return (
     <>
+    <div className = "navbar leftSide"></div>
       <div className="container is-fluid">
         <header className="navbar position-color">
               <div className="onHover">
@@ -156,11 +157,8 @@ function App() {
         {info === true && <Info/>}
         {user === true && <User/>}
         {books === true && <Books/>}
-        <div className = "navbar leftSide">
-            
-        </div>
         <button className="fa fa-book buttonBooks" onClick={changeToUserBooks} title="User Books"></button>
-            <button className="fa fa-address-book buttonUser" onClick={changeToUserAccount} title="User Account"></button>
+        <button className="fa fa-address-book buttonUser" onClick={changeToUserAccount} title="User Account"></button>
     </>
   );
 }
