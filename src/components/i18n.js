@@ -27,7 +27,13 @@ i18n
             version_info: "The version is ",
             language: "Language",
             popUser: "Account User",
-            popBooks: "Books"
+            popBooks: "Books",
+            name: "Username",
+            surname: "Surname",
+            nameError1: "First name is mandatory.",
+            nameError2: "First name must be at least 3 characters.",
+            surnameError1: "Surname is mandatory.",
+            surnameError2: "Surname must be at least 3 characters."
           }
         }
       },
